@@ -14,3 +14,7 @@ nginx в Москве (Timeweb App Platform) перед Vercel: из РФ blocks
 ## Что знать
 - Vercel будет показывать «Invalid Configuration» у blocks.zone — это ок, домен остаётся привязан к проекту.
 - Аналитика страны (`x-vercel-ip-country`) у всех станет RU: Vercel видит только IP прокси.
+
+## Схема (10.10)
+Из МСК-ДЦ Timeweb Vercel тоже режется, поэтому два хопа:
+РФ → `moscow/` (Timeweb Москва, ID 267905, путь проекта `moscow`) → корень репо (Timeweb Амстердам, ID 267917) → Vercel.
