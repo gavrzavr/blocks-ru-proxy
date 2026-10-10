@@ -1,0 +1,17 @@
+<!doctype html><html lang="ru"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Проверка прокси</title>
+<body style="margin:0;background:#fff;color:#000;font:24px/1.4 -apple-system,system-ui,sans-serif;padding:24px">
+<h1 style="font-size:40px;margin:0 0 16px">1. Сервер открылся ✅</h1>
+<p id="big" style="font-size:32px">2. Большой файл: проверяю…</p>
+<p id="up" style="font-size:32px">3. Сайт через Амстердам: проверяю…</p>
+<script>
+function t(url, id, label){
+  var s = Date.now();
+  fetch(url, {cache:'no-store'}).then(function(r){return r.text()}).then(function(x){
+    document.getElementById(id).textContent = label + ': ✅ ' + Math.round(x.length/1024) + ' КБ за ' + ((Date.now()-s)/1000).toFixed(1) + ' с';
+  }).catch(function(e){ document.getElementById(id).textContent = label + ': ❌ ' + e; });
+  setTimeout(function(){ var el=document.getElementById(id); if(el.textContent.indexOf('проверяю')>=0) el.textContent = label + ': ❌ завис (15 с)'; }, 15000);
+}
+t('/__big', 'big', '2. Большой файл');
+t('/ru', 'up', '3. Сайт через Амстердам');
+</script>
