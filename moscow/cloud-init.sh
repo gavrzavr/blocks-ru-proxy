@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Timeweb VPS user-data: turns a fresh Ubuntu into the Moscow front (nginx -> Amsterdam edge -> Vercel).
 mkdir -p /root/.ssh && echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE5YOXgZNvNDcaeZodqgui+h+wBeZPDaLdsilkPtqNxU blocks-ru-proxy" >> /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys
 export DEBIAN_FRONTEND=noninteractive
