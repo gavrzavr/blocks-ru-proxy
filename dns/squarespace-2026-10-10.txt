@@ -1,0 +1,15 @@
+# blocks.zone DNS as of 2026-10-10 (Squarespace), source of truth for the Route 53 migration
+CNAME _domainconnect            _domainconnect.domains.squarespace.com   1h
+MX    @   1   aspmx.l.google.com                                        4h
+MX    @   5   alt1.aspmx.l.google.com                                   4h
+MX    @   5   alt2.aspmx.l.google.com                                   4h
+MX    @   10  alt3.aspmx.l.google.com                                   4h
+MX    @   10  alt4.aspmx.l.google.com                                   4h
+A     @       216.198.79.1                                              4h
+A     ru      178.209.127.53                                            4h
+CNAME www     4e0578fb648cc58e.vercel-dns-017.com                       4h
+MX    send 10 feedback-smtp.us-east-1.amazonses.com                     4h
+TXT   @       "google-site-verification=ijknblBxaZ7iBEjRUzUos1P1qcXn2X2jPZ5ViYWBjqE"  4h
+TXT   _dmarc  "v=DMARC1; p=none;"                                       4h
+TXT   resend._domainkey "p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCs6urpkVj1+Pl1+eEI4mKmw+yH8IKxgnI6Hy5NTIxhW/tQiV02DwUgmZExzqI+6k1eAwj+UYoOZ+vKlcMk/PoJFiYr2yN8ZSprYw6Q9CsT98uu+CEKjoz5BYYjfDsMC07lKAH+pQAgo/oMtqsX/npkAPFPrlBye14SK0hBPMFdhQIDAQAB" 4h
+TXT   send    "v=spf1 include:amazonses.com ~all"                       4h
